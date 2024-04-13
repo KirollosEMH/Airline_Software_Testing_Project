@@ -13,10 +13,9 @@ public class Passenger extends User {
         this.reservation = new Reservation();
     }
 
-    public Passenger(String name, String email, int age, String phone, String id, String passportNumber, Reservation reservation) {
+    public Passenger(String name, String email, int age, String phone, String id, String passportNumber) {
         super(name, email, age, phone, id);
         this.passportNumber = passportNumber;
-        this.reservation = reservation;
     }
 
     @Override
