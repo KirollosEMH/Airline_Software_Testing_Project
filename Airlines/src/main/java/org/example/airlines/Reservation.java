@@ -1,40 +1,41 @@
 package org.example.airlines;
 
 public class Reservation {
-    private String reservationId;
-    private String seatNumber;
+    private int reservationId;
+    private String flightClass;
     private String status;
 
+    private static int reservationCounter = 1;
     public Reservation() {
-        this.reservationId = "";
-        this.seatNumber = "";
+        this.reservationId = reservationCounter++;
+        this.flightClass = "";
         this.status = "";
     }
 
-    public Reservation(String reservationId, String flightId, String userId, String seatNumber, String status) {
+    public Reservation(int reservationId, String flightId, String userId, String seatNumber, String status) {
         this.reservationId = reservationId;
-        this.seatNumber = seatNumber;
+        this.flightClass = seatNumber;
         this.status = status;
     }
 
-    public void setReservationId(String reservationId) {
-        this.reservationId = reservationId;
-    }
-
-
-    public void setSeatNumber(String seatNumber) {
-        this.seatNumber = seatNumber;
+    public void setFlightClass(String flightClass) {
+        this.flightClass = flightClass;
     }
 
     public void setStatus(String status) {
         this.status = status;
     }
 
-    public String getSeatNumber() {
-        return seatNumber;
+    public String getFlightClass() {
+        return flightClass;
     }
 
     public String getStatus() {
         return status;
     }
+    void displayInfo() {
+        System.out.println("Reservation ID: " + reservationId);
+        System.out.println("Flight Class: " + flightClass);
+    }
+
 }
