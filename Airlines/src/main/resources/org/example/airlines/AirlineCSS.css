@@ -1,0 +1,27 @@
+.welcomeImage {
+    -fx-background-image: url("Airplane.jpg");
+    -fx-background-size: cover;
+}
+
+.welcomeButton {
+    -fx-background-color: rgba(187, 187, 187, 0.5); /* 50% transparency */
+    -fx-background-radius: 10;
+}
+
+.welcomeButton:hover {
+    -fx-background-color: rgba(204, 204, 204, 0.5); /* Hover color with 50% transparency */
+}
+
+.menuImage {
+    -fx-background-image: url("Airplane2.jpg");
+    -fx-background-size: cover;
+}
+
+.menuButton {
+    -fx-background-color: rgba(187, 187, 187, 0.5); /* 50% transparency */
+    -fx-background-radius: 20;
+}
+
+.menuButton:hover {
+    -fx-background-color: rgba(204, 204, 204, 0.5); /* Hover color with 50% transparency */
+}
