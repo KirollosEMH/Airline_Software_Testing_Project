@@ -2,20 +2,20 @@ package org.example.airlines;
 
 public class Passenger extends User {
     private String passportNumber;
+    private FlightSchedule flightSchedule = new FlightSchedule();
+
     private Flight flight;
     private Reservation reservation;
 
     public Passenger() {
         super();
         this.passportNumber = "";
-        this.flight = new Flight();
         this.reservation = new Reservation();
     }
 
-    public Passenger(String name, String email, int age, String phone, String id, String passportNumber, Flight flight, Reservation reservation) {
+    public Passenger(String name, String email, int age, String phone, String id, String passportNumber, Reservation reservation) {
         super(name, email, age, phone, id);
         this.passportNumber = passportNumber;
-        this.flight = flight;
         this.reservation = reservation;
     }
 
@@ -27,16 +27,11 @@ public class Passenger extends User {
         System.out.println("Passenger Phone: " + getPhone());
         System.out.println("Passenger ID: " + getId());
         System.out.println("Passport Number: " + passportNumber);
-        System.out.println("Flight: " + flight);
         System.out.println("Reservation: " + reservation);
     }
 
     public void setPassportNumber(String passportNumber) {
         this.passportNumber = passportNumber;
-    }
-
-    public void setFlight(Flight flight) {
-        this.flight = flight;
     }
 
     public void setReservation(Reservation reservation) {
@@ -47,28 +42,31 @@ public class Passenger extends User {
         return passportNumber;
     }
 
-    public Flight getFlight() {
-        return flight;
-    }
 
     public Reservation getReservation() {
         return reservation;
     }
 
-    public void bookFlight() {
+    public void bookFlight(String flightId) {
+        this.flight = flightSchedule.searchFlight(flightId);
         System.out.println("Flight booked successfully!");
     }
 
     public void cancelFlight() {
         System.out.println("Flight cancelled successfully!");
+        flight = null;
     }
 
-    public void updateFlight() {
+    public void updateFlight(String flightId){
         System.out.println("Flight updated successfully!");
+        bookFlight(flightId);
     }
 
-    public void viewFlight() {
+    public void viewFlight(String FlightId) {
+        Flight tmp = flightSchedule.searchFlight(FlightId);
+        tmp.displayInfo();
         System.out.println("Flight viewed successfully!");
+        tmp = null;
     }
 
     public void viewReservation() {
@@ -84,6 +82,7 @@ public class Passenger extends User {
     }
 
     public void checkFlightSchedule() {
+        flightSchedule.displayFlights();
         System.out.println("Flight schedule checked successfully!");
     }
 
