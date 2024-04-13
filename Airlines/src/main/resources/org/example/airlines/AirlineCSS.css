@@ -30,3 +30,8 @@
     -fx-background-image: url("Airplane5.jpg");
     -fx-background-size: cover;
 }
+
+.PassengerImage {
+    -fx-background-image: url("Airplane4.jpg");
+    -fx-background-size: cover;
+}
