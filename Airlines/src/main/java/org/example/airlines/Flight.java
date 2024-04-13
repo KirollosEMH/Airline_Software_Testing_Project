@@ -9,6 +9,9 @@ public class Flight {
     private String duration;
     private String price;
     private String status;
+    private final int maxCapacity = 100;
+
+    private int capacity = 0;
 
 
     public Flight() {
@@ -96,6 +99,21 @@ public class Flight {
     public String getStatus() {
         return status;
     }
+
+    public boolean IncrementCapacity() {
+
+        if (capacity < maxCapacity) {
+            capacity++;
+            return true;
+        }
+        capacity = maxCapacity;
+        return false;
+    }
+
+    public  void DecrementCapacity() {
+        capacity--;
+    }
+
 
     public void displayInfo() {
         System.out.println("Flight ID: " + flightId);
