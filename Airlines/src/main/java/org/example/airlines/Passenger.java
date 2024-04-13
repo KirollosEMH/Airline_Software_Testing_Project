@@ -36,28 +36,31 @@ public class Passenger extends User {
         this.passportNumber = passportNumber;
     }
 
-
     public String getPassportNumber() {
         return passportNumber;
     }
 
-
-
-
     public void bookFlight(String flightId) {
         this.flight = flightSchedule.searchFlight(flightId);
         System.out.println("Flight booked successfully!");
-        reservation.setStatus("Booked");
+        if (this.flight.IncrementCapacity()){
+            System.out.println("Flight booked successfully!");
+            reservation.setStatus("Booked");
+        } else {
+            System.out.println("Flight is full!");
+        }
     }
 
     public void cancelFlight() {
         System.out.println("Flight cancelled successfully!");
-        flight = null;
+        this.flight.DecrementCapacity();
+        this.flight = null;
         reservation.setStatus("Cancelled");
     }
 
-    public void updateFlight(String flightId){
+    public void changeFlight(String flightId){
         System.out.println("Flight updated successfully!");
+        this.flight.DecrementCapacity();
         bookFlight(flightId);
     }
 
