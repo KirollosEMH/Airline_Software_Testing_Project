@@ -30,3 +30,18 @@
     -fx-background-image: url("Airplane5.jpg");
     -fx-background-size: cover;
 }
+.adminBackground {
+    -fx-background-image: url("Airplane5.jpg");
+    -fx-background-size: cover;
+}
+.textBackground{
+    -fx-background-color: rgba(187, 187, 187, 0.5); /* 50% transparency */
+    -fx-background-radius: 20;
+}
+.adminButton {
+    -fx-background-radius: 20;
+}
+.adminButton:hover {
+    -fx-background-color: rgba(204, 204, 204, 0.5); /* Hover color with 50% transparency */
+}
+
