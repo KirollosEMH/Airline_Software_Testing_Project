@@ -5,6 +5,7 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
+import javafx.scene.image.Image;
 import javafx.stage.Stage;
 
 import java.io.IOException;
@@ -16,14 +17,11 @@ public class AirlinesApplication extends Application {
         Scene scene = new Scene(fxmlLoader.load(), 1200, 700);
 //        stage.resizableProperty().setValue(Boolean.FALSE);
 
-        // Get the "Start" button from the loaded FXML
         Button startButton = (Button) scene.lookup("#startButton");
-
-        // Add an event handler to the button
         startButton.setOnAction(event -> {
             try {
                 // Load the Main.fxml file
-                Parent mainRoot = FXMLLoader.load(getClass().getResource("Main.fxml"));
+                Parent mainRoot = FXMLLoader.load(getClass().getResource("Login.fxml"));
                 Scene mainScene = new Scene(mainRoot, 1200, 700);
 
                 // Set the new scene on the stage
@@ -32,6 +30,8 @@ public class AirlinesApplication extends Application {
                 e.printStackTrace();
             }
         });
+        Image icon = new Image(getClass().getResourceAsStream("icon.png"));
+        stage.getIcons().add(icon);
         stage.setTitle("Air Broz");
         stage.setScene(scene);
         stage.show();

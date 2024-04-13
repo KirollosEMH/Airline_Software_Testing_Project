@@ -17,7 +17,6 @@
          <rowConstraints>
             <RowConstraints minHeight="10.0" vgrow="SOMETIMES" />
             <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
          </rowConstraints>
          <children>
             <Text fill="#005d7e" strokeType="OUTSIDE" strokeWidth="0.0" text="Welcome to Air Broz" textAlignment="CENTER" wrappingWidth="741.3333129882812" GridPane.halignment="CENTER">
@@ -25,11 +24,6 @@
                   <Font name="The Rift Shop" size="96.0" />
                </font>
             </Text>
-            <Button id="adminButton" alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" styleClass="welcomeButton" stylesheets="@AirlineCSS.css" text="Admin" textAlignment="CENTER" textFill="#00202b" GridPane.halignment="CENTER" GridPane.rowIndex="2">
-               <font>
-                  <Font name="The Rift Shop" size="65.0" />
-               </font>
-            </Button>
             <Button id="startButton" alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" styleClass="welcomeButton" stylesheets="@AirlineCSS.css" text="Start" textAlignment="CENTER" textFill="#00202b" GridPane.halignment="CENTER" GridPane.rowIndex="1">
                <font>
                   <Font name="The Rift Shop" size="65.0" />

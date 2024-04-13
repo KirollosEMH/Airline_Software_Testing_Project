@@ -25,3 +25,8 @@
 .menuButton:hover {
     -fx-background-color: rgba(204, 204, 204, 0.5); /* Hover color with 50% transparency */
 }
+
+.loginImage {
+    -fx-background-image: url("Airplane5.jpg");
+    -fx-background-size: cover;
+}
