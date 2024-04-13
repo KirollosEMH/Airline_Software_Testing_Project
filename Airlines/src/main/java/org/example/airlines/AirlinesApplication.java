@@ -20,7 +20,7 @@ public class AirlinesApplication extends Application {
         Button startButton = (Button) scene.lookup("#startButton");
         startButton.setOnAction(event -> {
             try {
-                // Load the Main.fxml file
+                // Load the PassengerMain.fxml file
                 Parent mainRoot = FXMLLoader.load(getClass().getResource("Login.fxml"));
                 Scene mainScene = new Scene(mainRoot, 1200, 700);
 
